@@ -23,7 +23,7 @@ export default {
                 this.$store.commit('UPDATE_TODO',{
                     index:this.index,
                     data:{
-                        content:this.content,
+                        content:this.todo.content,
                         complete:val
                     }
                 })
@@ -32,7 +32,7 @@ export default {
     },
     methods:{
         destroyHandler(){
-            if(confirm('是否確認刪除 ${this.todo.content} ?'))
+            if(confirm(`是否確認刪除 ${this.todo.content} ?`))
             this.$store.commit('DELETE_TODO',this.index)
         },
         editHandler(){
